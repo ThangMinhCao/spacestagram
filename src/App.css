@@ -15,3 +15,8 @@
 .logo {
   height: inherit;
 }
+
+.photo-list > * {
+  margin: 10px;
+  margin-bottom: 20px;
+}

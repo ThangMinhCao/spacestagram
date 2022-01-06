@@ -34,7 +34,7 @@ const Card = (props: CardProps) => {
             </Button>
           </div>
         </div>
-        <span>{description}</span>
+        <span className="description">{description}</span>
       </div>
     </div>
   );
