@@ -3,42 +3,78 @@
   height: 100vh;
   overflow: hidden;
   flex-direction: column;
+  /* min-width: 410px; */
 }
 
 .header {
   display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
   font-weight: bold;
   font-style: italic;
   font-size: 25px;
-  height: 40px;
   align-items: center;
   padding: 20px;
   box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.5);
 }
 
+.buttons {
+  width: 120px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .main-container {
   flex: 1;
   overflow: auto;
-}
-
-.photo-list {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  width: 100%;
-  overflow: auto;
+}
+
+.main-container > * {
+  margin: auto;
 }
 
 .header > * {
-  margin-right: 10px;
-  margin-left: 10px;
+  margin: 5px;
 }
 
 .logo {
-  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.logo > * {
+  height: 40px;
+  margin-right: 10px;
 }
 
 .photo-list > * {
   margin: 20px;
-  margin-bottom: 30px;
+}
+
+.date-picker {
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+  transition: box-shadow 100ms;
+}
+
+.date-picker:hover {
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.5);
+  transition: box-shadow 100ms;
+}
+
+.picker-container {
+  padding: 20px;
+}
+
+.photo-list {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(500px, 100%), 1fr));
+  justify-content: space-around;
+  align-content: center;
+  gap: 20px;
 }
