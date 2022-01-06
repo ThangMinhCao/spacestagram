@@ -4,31 +4,25 @@ import "./Button.css";
 interface ButtonProps {
   children: JSX.Element | string;
   onClick: () => void;
+  color: string;
+  clicked?: boolean;
   contained?: boolean;
   className?: string;
 }
 
-const Button = ({ children, onClick, contained = false }: ButtonProps) => {
-  const [clicked, setClicked] = useState(false);
-
+const Button = ({ children, onClick, color, clicked, contained = false }: ButtonProps) => {
   const getColorStyle = () => {
-    const notClickedStyle = { color: "#FF8989" };
-    const clickedStyle = { color: "#FFF", backgroundColor: "#FF8989" };
+    const notClickedStyle = { color: color };
+    const clickedStyle = { color: "#FFF", backgroundColor: color };
 
-    if (!contained) return {};
-    if (!clicked) return notClickedStyle;
+    if (!contained || !clicked) return notClickedStyle;
     return clickedStyle;
-  }
-
-  const handleClick = () => {
-    onClick();
-    if (contained) setClicked(!clicked);
   }
 
   return (
     <button
       className={`button ${contained ? "contained" : ""}`}
-      onClick={handleClick}
+      onClick={onClick}
       style={getColorStyle()}
     >
       {children}
