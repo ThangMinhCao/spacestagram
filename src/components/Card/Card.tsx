@@ -1,4 +1,7 @@
+import { useState } from "react";
 import "./Card.css";
+import Button from "../Button/Button";
+import { FavoriteBorder, Favorite } from "@material-ui/icons";
 
 interface CardProps {
   imgURL: string;
@@ -9,17 +12,32 @@ interface CardProps {
 
 const Card = (props: CardProps) => {
   const { imgURL, title, date, description } = props;
+  const [liked, setLiked] = useState(false);
 
   return (
     <div className="card">
       <img width="100%" src={imgURL} alt="space-img" />
       <div className="content">
-        <span className="date">{date}</span><br/>
-        <span className="title">{title}</span><br/>
+        <div className="card-header">
+          <div>
+            <span className="title">{title}</span>
+            <br />
+            <span className="date">{date}</span>
+          </div>
+          <div>
+            <Button onClick={() => setLiked(!liked)}>
+              {
+                liked
+                  ? <Favorite color="secondary" fontSize="inherit" />
+                  : <FavoriteBorder fontSize="inherit" />
+              }
+            </Button>
+          </div>
+        </div>
         <span>{description}</span>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default Card;

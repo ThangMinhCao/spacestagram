@@ -2,6 +2,8 @@ import React from "react";
 import "./App.css";
 import shopifyLogo from "./assets/shopify-logo.png";
 import Card from "./components/Card/Card";
+import Button from "./components/Button/Button";
+import { Favorite } from "@material-ui/icons";
 
 function App() {
   return (
@@ -22,6 +24,9 @@ function App() {
             title="Black hole"
           />
         </div>
+        <Button onClick={() => null} contained>
+            <Favorite color="inherit" fontSize="inherit" />
+        </Button>
       </div>
     </div>
   );
