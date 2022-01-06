@@ -1,0 +1,25 @@
+.card {
+  width: 500px;
+  border-radius: 3px;
+  overflow: hidden;
+  box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.content {
+  padding: 10px;
+}
+
+span {
+  display: inline-block;
+}
+
+.date {
+  font-style: italic;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-weight: bold;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
