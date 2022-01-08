@@ -11,6 +11,10 @@ interface ButtonProps {
 }
 
 const Button = ({ children, onClick, color, clicked, contained = false }: ButtonProps) => {
+  /**
+   * Get the style of the button based on the clicked-or-not state.
+   * @returns The style of the button.
+   */
   const getColorStyle = () => {
     const notClickedStyle = { color: color };
     const clickedStyle = { color: "#FFF", backgroundColor: color };

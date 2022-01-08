@@ -5,3 +5,7 @@ export interface Photo {
   explanation: string;
   liked: boolean;
 }
+
+export interface FavouriteList {
+  [url: string]: Photo;
+}
