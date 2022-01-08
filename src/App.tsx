@@ -29,11 +29,12 @@ function App() {
    */
   useEffect(() => {
     const favouriteList = localStorage.getItem("favourite-list");
+    let favouriteObj = {};
     if (favouriteList) {
-      const favouritesObj = JSON.parse(favouriteList);
+      favouriteObj = JSON.parse(favouriteList);
       setFavouritePhotos(favouritesObj);
-      fetchImages(favouritesObj);
     };
+    fetchImages(favouriteObj);
   }, []);
 
   /**
