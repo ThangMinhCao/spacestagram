@@ -32,7 +32,7 @@ function App() {
     let favouriteObj = {};
     if (favouriteList) {
       favouriteObj = JSON.parse(favouriteList);
-      setFavouritePhotos(favouritesObj);
+      setFavouritePhotos(favouriteObj);
     };
     fetchImages(favouriteObj);
   }, []);
